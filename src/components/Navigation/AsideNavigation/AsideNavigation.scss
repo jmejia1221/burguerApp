@@ -1,0 +1,41 @@
+.AsideNavigationContent {
+    display: none;
+}
+.AsideNavigationItem {
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+}
+
+.AsideNavigationItem a {
+    color: var(--secondary);
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding: 1rem 2rem;
+    transition: all .5s;
+}
+
+.AsideNavigationItem a:hover,
+.AsideNavigationItem a:active,
+.AsideNavigationItem a.active{
+    display: block;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: var(--primary);
+}
+
+@media (min-width: 500px) {
+    .AsideNavigationContent {
+        display: block;
+        flex: 1 1 20%;
+        height: 100%;
+        border-right: 1px solid #eee;
+        box-sizing: border-box;
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+}

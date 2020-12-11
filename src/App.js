@@ -10,7 +10,7 @@ import Orders from './containers/Orders/Orders';
 import Auth from './containers/Auth/Auth';
 import Logout from './containers/Auth/Logout/Logout';
 
-
+import './App.css';
 class App extends Component {
 
   componentDidMount() {
@@ -40,7 +40,7 @@ class App extends Component {
       )
     }
     return (
-      <div>
+      <div className="AppContent">
         <Layout>
           {routes}
         </Layout>

@@ -7,6 +7,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../store/actions/index';
 
+import './Orders.scss';
 class Orders extends Component {
     state = {
         loading: true
@@ -29,7 +30,7 @@ class Orders extends Component {
             );
         }
         return (
-            <div>
+            <div className="Orders">
                 {orders}
             </div>
         );

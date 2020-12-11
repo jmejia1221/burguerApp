@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Aux from '../Aux/Aux';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import AsideNavigation from '../../components/Navigation/AsideNavigation/AsideNavigation';
 
 import './Layout.scss';
 
@@ -35,6 +36,7 @@ class Layout extends Component {
                     open={this.state.showSideDrawer}
                     closed={this.SideDrawerClosedHandler} />
                 <main className='Content'>
+                    <AsideNavigation isAuthenticated={this.props.isAuthenticated} />
                     {this.props.children}
                 </main>
             </Aux>

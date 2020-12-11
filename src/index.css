@@ -1,5 +1,30 @@
-body {
+:root {
+    --primary: #ffca40;
+    --secondary: #333;
+    --grey: #808080;
+    --grey-light: #f8f8f7;
+}
+#root {
+  height: 100%;
+}
+body,
+html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-size: 62.2%;
   font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.m-right-8 {
+    margin-right: .8rem;
 }

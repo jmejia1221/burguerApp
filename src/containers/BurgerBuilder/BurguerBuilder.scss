@@ -1,0 +1,18 @@
+.BurgerBuilderContent {
+    // width: 69%;
+    flex: 2 2 69%;
+    font-size: 1.6rem;
+}
+.BurgerCardContent {
+    display: flex;
+    flex: 2 2 69%;
+    flex-wrap: wrap;
+    height: fit-content;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 5rem;
+}
+.BurgerControlsContent {
+    padding: 5rem 15rem;
+    box-sizing: border-box;
+}

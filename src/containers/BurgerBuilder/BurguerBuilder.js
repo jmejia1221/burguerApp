@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import Aux from '../../hoc/Aux/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import BurgerCard from '../../components/Burger/BurgerCard/BurgerCard';
 import Modal from '../../components/UI/Modal/Modal';
+import SidePanel from '../../components/UI/SidePanel/SidePanel';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
@@ -12,6 +14,7 @@ import axios from '../../axios-order';
 
 import * as actions from '../../store/actions/index';
 
+import './BurguerBuilder.scss';
 class BurguerBuilder extends Component {
     // constructor(props) {
     //     super(props);
@@ -19,6 +22,7 @@ class BurguerBuilder extends Component {
     // }
     state = {
         purchasing: false,
+        purchaseBurger: false
     }
 
     componentDidMount() {
@@ -103,7 +107,42 @@ class BurguerBuilder extends Component {
         this.props.onInitPurchased();
     }
 
+    openPurchaseBurger = () => {
+        this.setState({purchaseBurger: true});
+    }
+
+    closePurchaseBurger = () => {
+        this.setState({purchaseBurger: false});
+    }
+
     render () {
+        const burgers = [
+            {
+                id: 1,
+                name: 'Double Burger',
+                price: 18,
+                grams: '150g'
+            },
+            {
+                id: 2,
+                name: 'Big John',
+                price: 20,
+                grams: '3200g'
+            },
+            {
+                id: 3,
+                name: 'Spicy Chicken',
+                price: 22,
+                grams: '240g'
+            },
+            {
+                id: 4,
+                name: 'Chicken-Deluxe',
+                price: 14,
+                grams: '650g'
+            }
+        ];
+
         const disabledInfo = {
             ...this.props.ings
         };
@@ -116,7 +155,7 @@ class BurguerBuilder extends Component {
         let burger = this.props.error ? <p>Ingredients can't be loaded</p> : <Spinner />
         if (this.props.ings) {
             burger = (
-                <Aux>
+                <div className="BurgerBuilderContent">
                     <Burger ingredients={this.props.ings} />
                     <BuildControls
                         ingredientAdded={this.props.onIngredientAdded}
@@ -126,7 +165,7 @@ class BurguerBuilder extends Component {
                         price={this.props.price}
                         isAuth={this.props.isAuthanticated}
                         ordered={this.purchaseHandler} />
-                </Aux>
+                </div>
             );
 
             orderSummary = <OrderSummary
@@ -135,12 +174,27 @@ class BurguerBuilder extends Component {
                 purchaseContinued={this.purchaseContinueHandler}
                 ingredients={this.props.ings} />;
         }
+        let BurgersCard = burgers.map(burger => (
+            <BurgerCard
+                key={burger.id}
+                name={burger.name}
+                price={burger.price}
+                grams={burger.grams}
+                openPurchaseBurger={this.openPurchaseBurger} />
+        ));
         return (
             <Aux>
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
                     {orderSummary}
                 </Modal>
-                {burger}
+                <div className="BurgerCardContent">
+                    {BurgersCard}
+                </div>
+                <SidePanel show={this.state.purchaseBurger} sidePanelClosed={this.closePurchaseBurger}>
+                    <div className="BurgerControlsContent">
+                        {burger}
+                    </div>
+                </SidePanel>
             </Aux>
         );
     }

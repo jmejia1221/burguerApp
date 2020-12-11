@@ -15,12 +15,12 @@ const sideDrawer = (props) => {
     return (
         <Aux>
             <BackDrop show={props.open} clicked={props.closed} />
-            <div className={attachedClasses} ng-click={props.closed}>
+            <div className={attachedClasses} onClick={props.closed}>
                 <div className="DrawerLogo">
                     <Logo />
                 </div>
                 <nav>
-                    <NavigationItems isAuthenticated={props.isAuth} />
+                    <NavigationItems isSideDrawer isAuthenticated={props.isAuth} />
                 </nav>
             </div>
         </Aux>
