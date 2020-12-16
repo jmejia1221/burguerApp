@@ -4,13 +4,15 @@
     background-color: white;
     width: 70%;
     border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
-    padding: 16px;
+    padding: 3rem;
     left: 15%;
-    top: 30%;
+    top: 20%;
     box-sizing: border-box;
     font-size: 1.6rem;
     transition: all 0.3s ease-out;
+    border-radius: 1.5rem;
+    box-shadow: 10px 10px 0px rgba(255, 255, 255, 0.4),
+                -10px -10px 0 rgba(255, 255, 255, 0.4);
 }
 
 @media (min-width: 600px) {

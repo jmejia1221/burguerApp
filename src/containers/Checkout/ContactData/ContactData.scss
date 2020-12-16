@@ -1,8 +1,21 @@
 .ContactData {
-    margin: 20px auto;
+    margin: 5rem auto 0;
     width: 80%;
+    border-radius: 1rem;
     text-align: center;
-    box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 10px 10px 0 rgba(255, 202, 64, .5),
+                -10px -10px 0 rgba(255, 202, 64, .5);
+    padding: 3.5rem 2rem;
+    box-sizing: border-box;
+    border: 1px solid var(--secondary);
+}
+.contactForm button {
+    width: 95%;
+}
+.contactTitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary);
 }
 
 @media (min-width: 600px) {

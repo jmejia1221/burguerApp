@@ -1,0 +1,50 @@
+.orderTitle {
+    font-size: 2.8rem;
+}
+.orderLegend {
+    color: var(--secondary);
+}
+.orderIngList {
+    background: var(--grey-light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+.orderIngItem {
+    padding: 1rem .5rem;
+}
+.orderIngItem span,
+.orderIngItem strong {
+    color: var(--secondary);
+}
+.orderIngItem span {
+    text-transform: uppercase;
+    font-weight: bold;
+    min-width: 17rem;
+    display: inline-block;
+    position: relative;
+}
+.orderIngItem span:after {
+    content: '';
+    position: absolute;
+    width: 19rem;
+    height: 1rem;
+    left: 0;
+    bottom: -3px;
+    border-bottom: 2px dotted var(--grey);
+}
+.orderPrice {
+    background: var(--grey-light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+.orderQuestion {
+    text-align: right;
+    color: var(--secondary);
+}
+.orderButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+.orderButtons .Button:nth-of-type(2) {
+    margin-right: 0;
+}

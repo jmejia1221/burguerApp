@@ -12,18 +12,17 @@
 
 .Button:disabled {
     color: #ccc;
+    background: var(--grey);
     cursor: not-allowed;
 }
 
-.Button:first-of-type {
-    margin-left: 0;
-    padding-left: 0;
-}
-
 .Success {
-    color: #5C9210;
+    color: var(--secondary);
+    background: var( --primary);
+    border-radius: 1rem;
+    padding: 1rem 3rem;
 }
 
 .Danger {
-    color: #944317;
+    color: var(--secondary);
 }

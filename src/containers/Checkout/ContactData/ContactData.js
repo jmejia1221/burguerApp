@@ -158,7 +158,7 @@ class ContactData extends Component {
             });
         }
         let form = (
-            <form onSubmit={this.orderHandler}>
+            <form className="contactForm" onSubmit={this.orderHandler}>
                 { formElementsArray.map(formElement => {
                     return <Input
                         key={formElement.id}
@@ -170,7 +170,11 @@ class ContactData extends Component {
                         touched={formElement.config.touched}
                         changed={(event) => this.inputChangedHandler(event, formElement.id)} />;
                 }) }
-                <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
+                <Button
+                    btnType="Success"
+                    disabled={!this.state.formIsValid}>
+                    ORDER
+                </Button>
             </form>
         );
         if (this.props.loader) {
@@ -178,7 +182,7 @@ class ContactData extends Component {
         }
         return (
             <div className="ContactData">
-                <h4>Enter your contact data</h4>
+                <h4 className="contactTitle">Enter your contact data</h4>
                 {form}
             </div>
         );

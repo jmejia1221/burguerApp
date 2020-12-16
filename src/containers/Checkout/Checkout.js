@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
 
+import './Checkout.scss';
+
 class Checkout extends Component {
 
     // componentWillMount() {
@@ -35,12 +37,13 @@ class Checkout extends Component {
         if (this.props.ings) {
             const purchasedRedirect = this.props.purchased ? <Redirect to="/" /> : null;
             summary = (
-                <div>
+                <div className="CheckoutContent">
                     {purchasedRedirect}
                     <CheckoutSummary
                         checkoutCancelled={this.checkoutCancelledHandler}
                         checkoutContinued={this.checkoutContinuedHandler}
                         ingredients={this.props.ings} />
+                    <span className="checkoutLine"></span>
                     <Route
                         path={this.props.match.path + '/contact-data'}
                         component={ContactData} />

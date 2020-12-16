@@ -12,18 +12,21 @@
 
 .InputElement {
     outline: none;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secondary);
     background-color: #fff;
     font: inherit;
-    padding: 6px 10px;
+    padding: 1rem 1.5rem;
     display: block;
     width: 100%;
     box-sizing: border-box;
+    border-radius: 1rem;
+    color: var(--secondary);
+    font-weight: 700;
 }
 
 .InputElement:focus {
     outline: none;
-    background-color: #ccc;
+    background-color: var(--grey-light);
 }
 
 .Invalid {

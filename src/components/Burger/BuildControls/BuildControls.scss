@@ -6,3 +6,12 @@
     margin: auto;
     padding: 10px 0;
 }
+.BuildControlsPrice {
+    background: var(--grey-light);
+    text-align: center;
+    padding: 2rem 4rem;
+    border-radius: 1.5rem;
+    border-bottom: 3px dashed var(--secondary);
+    font-size: 1.9rem;
+    margin-bottom: 5rem;
+}

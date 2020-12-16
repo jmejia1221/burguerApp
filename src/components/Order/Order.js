@@ -1,3 +1,5 @@
+import { faBacon, faCarrot, faCheese, faDrumstickBite } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import './Order.scss';
@@ -14,14 +16,14 @@ const Order = (props) => {
 
     const ingredientsOutput = ingredients.map(ig => {
         return <span
-            style={{
-                textTransform: 'capitaliz',
-                display: 'inline-block',
-                margin: '0 8px',
-                border: '1px solid #ccc',
-                padding: '5px'
-            }}
-           key={ig.name}>{ig.name} {ig.amount}</span>
+            className="ingredientOrder"
+            key={ig.name}>
+                {ig.name === 'bacon' && <FontAwesomeIcon icon={faBacon} />}
+                {ig.name === 'cheese' && <FontAwesomeIcon icon={faCheese} />}
+                {ig.name === 'meat' && <FontAwesomeIcon icon={faDrumstickBite} />}
+                {ig.name === 'salad' && <FontAwesomeIcon icon={faCarrot} />}
+                <span className="ingredientOrderText">{ig.name} {ig.amount}</span>
+            </span>
     })
 
     return (

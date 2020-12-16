@@ -1,3 +1,5 @@
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import './BuildControl.scss';
@@ -9,12 +11,12 @@ const buildControl = (props) => (
                 className="Less"
                 disabled={props.disabled}
                 onClick={props.removed}>
-                Less
+            <FontAwesomeIcon icon={faMinus} />
         </button>
         <button
             className="More"
             onClick={props.added}>
-            More
+            <FontAwesomeIcon icon={faPlus} />
         </button>
     </div>
 );

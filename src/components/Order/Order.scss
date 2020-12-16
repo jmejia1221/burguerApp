@@ -1,8 +1,22 @@
 .Order {
     width: 80%;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 3px #ccc;
-    padding: 10px;
-    margin: 10px auto;
+    border: 1px solid var(--secondary);
+    box-shadow: -10px -10px 0 var(--primary), 10px 10px 0 var(--primary);
+    padding: 1rem 3rem;
+    margin: 2rem auto 4rem;
     box-sizing: border-box;
+    border-radius: 1.5rem;
+}
+.ingredientOrder {
+    display: inline-block;
+    margin: 0px 8px;
+    padding: .5rem 1rem;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    font-weight: bold;
+    border-radius: .5rem;
+    text-transform: capitalize;
+}
+.ingredientOrderText {
+    margin-left: 1rem;
 }

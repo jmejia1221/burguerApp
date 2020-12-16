@@ -22,7 +22,8 @@ class BurguerBuilder extends Component {
     // }
     state = {
         purchasing: false,
-        purchaseBurger: false
+        purchaseBurger: false,
+        burgerName: ''
     }
 
     componentDidMount() {
@@ -83,6 +84,9 @@ class BurguerBuilder extends Component {
             this.props.onSetAuthRedirectPath('/checkout');
             this.props.history.push('/auth');
         }
+        this.setState({
+            purchaseBurger: false
+        });
     }
 
     purchaseCancelHandler = () => {
@@ -107,8 +111,11 @@ class BurguerBuilder extends Component {
         this.props.onInitPurchased();
     }
 
-    openPurchaseBurger = () => {
-        this.setState({purchaseBurger: true});
+    openPurchaseBurger = (burgerName) => {
+        this.setState({
+            purchaseBurger: true,
+            burgerName
+        });
     }
 
     closePurchaseBurger = () => {
@@ -140,6 +147,36 @@ class BurguerBuilder extends Component {
                 name: 'Chicken-Deluxe',
                 price: 14,
                 grams: '650g'
+            },
+            {
+                id: 5,
+                name: 'Hamburger',
+                price: 13,
+                grams: '350g'
+            },
+            {
+                id: 6,
+                name: 'Superstars',
+                price: 16,
+                grams: '450g'
+            },
+            {
+                id: 7,
+                name: 'Super John',
+                price: 30,
+                grams: '650g'
+            },
+            {
+                id: 8,
+                name: 'Hulk-Burger',
+                price: 10,
+                grams: '350g'
+            },
+            {
+                id: 9,
+                name: 'Double Meat',
+                price: 20,
+                grams: '450g'
             }
         ];
 
@@ -156,7 +193,9 @@ class BurguerBuilder extends Component {
         if (this.props.ings) {
             burger = (
                 <div className="BurgerBuilderContent">
-                    <Burger ingredients={this.props.ings} />
+                    <Burger
+                        burgerName={this.state.burgerName}
+                        ingredients={this.props.ings} />
                     <BuildControls
                         ingredientAdded={this.props.onIngredientAdded}
                         ingredientRemoved={this.props.onIngredientRemoved}
@@ -190,7 +229,9 @@ class BurguerBuilder extends Component {
                 <div className="BurgerCardContent">
                     {BurgersCard}
                 </div>
-                <SidePanel show={this.state.purchaseBurger} sidePanelClosed={this.closePurchaseBurger}>
+                <SidePanel
+                    show={this.state.purchaseBurger}
+                    sidePanelClosed={this.closePurchaseBurger}>
                     <div className="BurgerControlsContent">
                         {burger}
                     </div>
