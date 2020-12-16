@@ -13,7 +13,7 @@ const navigationItems = (props) => (
             <>
                 <NavigationItem link="/" exact>
                     <FontAwesomeIcon className="m-right-8" icon={faHamburger} />
-                    Burguers
+                    Burgers
                 </NavigationItem>
                 <NavigationItem link="/orders">
                     <FontAwesomeIcon className="m-right-8" icon={faWallet} />

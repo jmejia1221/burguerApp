@@ -10,6 +10,8 @@ import { validity } from '../../shared/validation';
 import * as actions from '../../store/actions/index';
 
 import './Auth.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 
 class Auth extends Component {
     state = {
@@ -120,7 +122,8 @@ class Auth extends Component {
         return (
             <div className="Auth">
                 <div className="AuthContent">
-                    <h1 className="AuthTitle">{this.state.isSignUp ? 'SIGN IN': 'SIGN UP'}</h1>
+                    <FontAwesomeIcon style={{fontSize: '5rem', color: '#ffca40', marginTop: '2rem'}} icon={faHamburger} />
+                    <h1 className="AuthTitle">{this.state.isSignUp ? 'SIGN UP': 'SIGN IN'}</h1>
                     {authRedirect}
                     {errorMessage}
                     <form onSubmit={this.submitHandler}>

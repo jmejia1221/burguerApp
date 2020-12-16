@@ -1,4 +1,4 @@
-import { faBacon, faCarrot, faCheese, faDrumstickBite } from '@fortawesome/free-solid-svg-icons';
+import { faBacon, faCarrot, faCheese, faDrumstickBite, faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -28,6 +28,10 @@ const Order = (props) => {
 
     return (
         <div className="Order">
+            <h4 className="OrderTitle">
+                <FontAwesomeIcon icon={faHamburger} />
+                <span>{props.burgerName ? props.burgerName : 'Burger'}</span>
+            </h4>
             <p>Ingredients: {ingredientsOutput}</p>
             <p>Price: <strong>USD {Number.parseFloat(props.price).toFixed(2)}</strong></p>
         </div>

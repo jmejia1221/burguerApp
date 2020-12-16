@@ -4,7 +4,8 @@ const initialState = {
     ingredients: null,
     totalPrice: 4,
     error: false,
-    building: false
+    building: false,
+    burgerName: ''
 };
 
 const INGREDIENT_PRICES = {
@@ -52,7 +53,13 @@ const reducer = (state = initialState, action) => {
                 totalPrice: 4,
                 error: false,
                 building: false
-            }
+            };
+        case actionTypes.SET_BURGER_INFO:
+            return {
+                ...state,
+                totalPrice: action.totalPrice,
+                burgerName: action.burgerName
+            };
         case actionTypes.FETCH_INGREDIENTS_FAILED:
             return {
                 ...state,

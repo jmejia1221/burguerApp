@@ -1,3 +1,5 @@
+import { faWallet } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from '../../axios-order';
@@ -24,6 +26,7 @@ class Orders extends Component {
             orders = (
                 this.props.orders.map(order => (
                     <Order key={order.id}
+                    burgerName={order.burgerName}
                     ingredients={order.ingredients}
                     price={order.price} />
                 ))
@@ -31,6 +34,10 @@ class Orders extends Component {
         }
         return (
             <div className="Orders">
+                <h3 className="OrdersTitle">
+                    <FontAwesomeIcon icon={faWallet} />
+                    <span>Orders</span>
+                </h3>
                 {orders}
             </div>
         );

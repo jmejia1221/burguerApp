@@ -12,6 +12,17 @@
     box-sizing: border-box;
     padding: 5rem;
 }
+.BurgerBuilderTitle {
+    color: var(--secondary);
+    width: 100%;
+    font-size: 4rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px dashed #ddd;
+}
+.BurgerBuilderTitle span {
+    display: inline-block;
+    margin-left: 2rem;
+}
 .BurgerControlsContent {
     padding: 5rem 15rem;
     box-sizing: border-box;

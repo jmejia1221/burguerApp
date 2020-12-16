@@ -15,6 +15,8 @@ import axios from '../../axios-order';
 import * as actions from '../../store/actions/index';
 
 import './BurguerBuilder.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 class BurguerBuilder extends Component {
     // constructor(props) {
     //     super(props);
@@ -111,11 +113,12 @@ class BurguerBuilder extends Component {
         this.props.onInitPurchased();
     }
 
-    openPurchaseBurger = (burgerName) => {
+    openPurchaseBurger = (burgerName, totalPrice) => {
         this.setState({
             purchaseBurger: true,
             burgerName
         });
+        this.props.onSetBurgerInfo(burgerName, totalPrice);
     }
 
     closePurchaseBurger = () => {
@@ -227,6 +230,10 @@ class BurguerBuilder extends Component {
                     {orderSummary}
                 </Modal>
                 <div className="BurgerCardContent">
+                    <h3 className="BurgerBuilderTitle">
+                        <FontAwesomeIcon icon={faHamburger} />
+                        <span>Burgers</span>
+                    </h3>
                     {BurgersCard}
                 </div>
                 <SidePanel
@@ -248,15 +255,17 @@ const mapStateToProps = state => {
         error: state.burgerBuilder.error,
         isAuthanticated: state.auth.token
     };
-}
+};
+
 const mapDispatchToProps = dispatch => {
     return {
         onIngredientAdded: (ingName) => dispatch(actions.addIngredient(ingName)),
         onIngredientRemoved: (ingName) => dispatch(actions.removeIngredient(ingName)),
         onInitIngredients: () => dispatch(actions.initIngredients()),
         onInitPurchased: () => dispatch(actions.purchaseInit()),
-        onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
+        onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path)),
+        onSetBurgerInfo: (burgerName, totalPrice) => dispatch(actions.setBurgerInfo(burgerName, totalPrice))
     };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurguerBuilder, axios));

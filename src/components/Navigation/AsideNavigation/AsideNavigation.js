@@ -8,7 +8,7 @@ import './AsideNavigation.scss';
 const AsideNavigation = (props) => {
     const navItems = [
         {
-            itemName: 'Burguers',
+            itemName: 'Burgers',
             url: '/',
             exact: true,
             isAuth: true,

@@ -8,7 +8,7 @@ import './BurgerCard.scss';
 
 const BurgerCard = (props) => {
     return (
-        <div className="BurgerCard" onClick={() => props.openPurchaseBurger(props.name)}>
+        <div className="BurgerCard" onClick={() => props.openPurchaseBurger(props.name, props.price)}>
             {/* <FontAwesomeIcon style={{fontSize: '10rem', margin: '2rem 0', color: '#ffca40'}} icon={faHamburger} /> */}
             <img style={{width: '60%', margin: '2rem 0'}} src={burgerLogo} alt="myBurger" />
             <h4 className="name">{props.name}</h4>

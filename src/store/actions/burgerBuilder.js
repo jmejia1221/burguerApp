@@ -28,6 +28,14 @@ export const setIngredientsFailed = () => {
     };
 };
 
+export const setBurgerInfo = (burgerName, totalPrice) => {
+    return {
+        type: actionTypes.SET_BURGER_INFO,
+        totalPrice,
+        burgerName
+    };
+};
+
 export const initIngredients = () => {
     return dispatch => {
         axios.get('/ingredients.json')
