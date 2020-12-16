@@ -3,10 +3,27 @@
     width: 80%;
     text-align: center;
     box-shadow: 2px 2px 2px #ccc;
+    flex: 2 2 69%;
+    font-size: 1.6rem;
+}
+.AuthTitle {
+    color: var(--secondary);
+    margin: 1.5rem 0;
+}
+.AuthContent {
+    width: 40rem;
+    margin: 0 auto;
+    border: 1px solid var(--secondary);
+    box-shadow: -10px -10px 0 var(--primary), 10px 10px 0 var(--primary);
+    padding: 1rem 3rem;
+    margin: 2rem auto 4rem;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
 }
 
 @media (min-width: 600px) {
     .Auth {
-        width: 500px;
+        flex: 2 2 69%;
+        font-size: 1.6rem;
     }
 }
