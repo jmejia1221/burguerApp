@@ -16,6 +16,7 @@
     transition: all 0.3s ease-out;
     border-top-left-radius: 3rem;
     border-bottom-left-radius: 3rem;
+    overflow-y: auto;
 }
 .panelLine {
     width: .8rem;
@@ -27,4 +28,10 @@
     top: calc(50% - 125px);
     border-radius: .8rem;
     transition: all 0.3s ease-out;
+}
+
+@media screen and (max-width: 800px) {
+    .SidePanel {
+        width: 90%;
+    }
 }

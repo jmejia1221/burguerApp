@@ -27,3 +27,9 @@
     padding: 5rem 15rem;
     box-sizing: border-box;
 }
+
+@media screen and (max-width: 800px) {
+    .BurgerControlsContent {
+        padding: 1rem;
+    }
+}

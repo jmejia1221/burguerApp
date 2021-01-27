@@ -5,7 +5,7 @@
     text-align: center;
     box-shadow: 10px 10px 0 rgba(255, 202, 64, .5),
                 -10px -10px 0 rgba(255, 202, 64, .5);
-    padding: 3.5rem 2rem;
+    padding: 2rem 1rem;
     box-sizing: border-box;
     border: 1px solid var(--secondary);
 }
@@ -21,5 +21,6 @@
 @media (min-width: 600px) {
     .ContactData {
         width: 500px;
+        padding: 3.5rem 2rem;
     }
 }

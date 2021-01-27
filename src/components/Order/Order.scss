@@ -24,8 +24,21 @@
     color: var(--secondary);
     font-weight: bold;
     border-radius: .5rem;
+    font-size: 1.4rem;
     text-transform: capitalize;
 }
 .ingredientOrderText {
     margin-left: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .ingredientsOrderContent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ingredientOrder {
+        flex: 1 100%;
+        margin-top: 1rem;
+    }
 }
